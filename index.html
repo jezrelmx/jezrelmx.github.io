@@ -123,7 +123,7 @@
         </video>
         <h1 id="titulo">Tepoztlán, Morelos</h1>
         <div class= "offset-lg-1 col-lg-10 offset-lg-1 div_tiempo">
-            <div class="container">
+            <div class="container" id="cajita">
                 <ul>
                     <li><span id="days"></span>días</li>
                     <li><span id="hours"></span>horas</li>
@@ -143,6 +143,8 @@
     </body>
     
     <script type="text/javascript">
+
+
         const second = 1000,
         minute = second * 60,
         hour = minute * 60,
@@ -156,5 +158,14 @@
                         document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
                         document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
                         }, second)
-        </script>
+        
+        jQuery( document ).ready(function($) {
+            alert("ok");
+            $('#video_background').get(0).play();
+        });
+
+        $('h1, h2, h3, h4, h5, h6, #cajita, body').click(function(){
+            alert("ok");
+        });
+    </script>
 </html>
